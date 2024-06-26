@@ -1,0 +1,81 @@
+.label {
+  width: 80px;
+  height: 40px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.label:after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.inp {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.inp:checked + .label {
+  background: #242424;
+}
+.inp:checked + .label:after {
+  left: 75px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+.label,
+.label:after {
+  transition: 0.3s;
+}
+.label:active:after {
+  width: 40px;
+}
+.inp:checked + .label + .background {
+  background: #242424;
+}
+.label svg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  z-index: 100;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.label svg.sun {
+  left: 7.5px;
+  fill: #fff;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.label svg.moon {
+  right: 7.5px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.inp:checked + .label svg.sun {
+  fill: #7e7e7e;
+}
+.inp:checked + .label svg.moon {
+  fill: #fff;
+}
